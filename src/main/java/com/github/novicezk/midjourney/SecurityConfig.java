@@ -20,6 +20,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("leo")
                 .password(passwordEncoder.encode("leoPass"))
                 .roles("USER");
+        auth.inMemoryAuthentication()
+                .passwordEncoder(passwordEncoder)
+                .withUser("jy")
+                .password(passwordEncoder.encode("jyAuth000"))
+                .roles("USER");
     }
 
     @Override
