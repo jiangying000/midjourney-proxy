@@ -27,7 +27,7 @@ public class NotifyServiceImpl implements NotifyService {
 		}
 		try {
 			String paramsStr = OBJECT_MAPPER.writeValueAsString(task);
-			log.debug("任务变更, 触发推送, task: {}", paramsStr);
+			log.debug("任务变更, 触发推送, task: {}, to {}", paramsStr, notifyHook);
 			postJson(notifyHook, paramsStr);
 		} catch (Exception e) {
 			log.warn("回调通知接口失败: {}", e.getMessage());
